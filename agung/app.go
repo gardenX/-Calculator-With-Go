@@ -28,7 +28,7 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Simple calc")
-	fmt.Println("--------------------")
+	fmt.Println("---------------------")
 
 	for {
 		fmt.Println("Total :", total)
