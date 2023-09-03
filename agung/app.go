@@ -17,9 +17,9 @@ const (
 	done  = "C"
 )
 
-func main() {
+func Main() {
 	var (
-		total    int
+		total    MicroValue
 		operator string
 		value    int
 		inputs   []string
@@ -28,10 +28,10 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Simple calc")
-	fmt.Println("--------------------")
+	fmt.Println("---------------------")
 
 	for {
-		fmt.Println("Total :", total)
+		fmt.Println("Total :", DisplayMacro(total))
 		fmt.Println("Input format <operator> <value>")
 		fmt.Println("Supported operator (+ - * /) (C) close (R) reset")
 		fmt.Print("Your input : ")
@@ -63,29 +63,14 @@ func main() {
 
 		operator = inputs[0]
 		value = valueInt
-
-		if operator == add {
-			total = Add(total, value)
-		}
-
-		if operator == sub {
-			total = Sub(total, value)
-		}
-
-		if operator == time {
-			total = Time(total, value)
-		}
-
-		if operator == div {
-			total = Div(total, value)
-		}
+		total = Calc(total, operator, ToMicro(value))
 		fmt.Println("--------------------")
 	}
 
 	fmt.Println("Closed")
 }
 
-func resetStep() (int, int) {
+func resetStep() (MicroValue, int) {
 	fmt.Println("--------------------")
 	return 0, 0
 }
