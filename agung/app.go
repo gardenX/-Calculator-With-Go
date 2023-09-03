@@ -17,7 +17,7 @@ const (
 	done  = "C"
 )
 
-func main() {
+func Calc() {
 	var (
 		total    int
 		operator string
@@ -64,21 +64,17 @@ func main() {
 		operator = inputs[0]
 		value = valueInt
 
-		if operator == add {
+		switch operator {
+		case add:
 			total = Add(total, value)
-		}
-
-		if operator == sub {
+		case sub:
 			total = Sub(total, value)
-		}
-
-		if operator == time {
+		case time:
 			total = Time(total, value)
-		}
-
-		if operator == div {
+		case div:
 			total = Div(total, value)
 		}
+
 		fmt.Println("--------------------")
 	}
 

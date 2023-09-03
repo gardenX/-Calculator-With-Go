@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
+func Main() {
 	fmt.Println("Assalamualaikum Teman ?")
 	fmt.Println("1. Waalaikum Salam ")
 	fmt.Println("2. Exit ")
@@ -52,4 +54,9 @@ func main() {
 
 	}
 
+}
+
+func main() {
+	// agung.Calc()
+	// Main()
 }
